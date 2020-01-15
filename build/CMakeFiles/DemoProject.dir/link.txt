@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/DemoProject.dir/src/HelloWorld.cpp.o  -o DemoProject libs/glfw/src/libglfw3.a libs/glad/libglad.a libs/glad/libglad.a -lpthread -lrt -lm -ldl -lX11 

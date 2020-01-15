@@ -1,38 +1,20 @@
-//#include "HelloWorld.h"
 #include <cstdio>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "../include/WindowManager.h"
+#include "unistd.h" //testcase only
 
 int main() {
 
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+  WindowManager* window_manager = new WindowManager(640, 480, 120, "First Window");
+  window_manager->createDisplay(); 
+  
+  while(true) {
+    window_manager->updateDisplay();
+    usleep(500);
+  }
 
-	if (window == NULL) {
-		printf("Something went wrong");
-		glfwTerminate();
-		return -1;
-	}
-
-	glfwMakeContextCurrent(window);
-
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		printf("Failed to initialize GLAD");
-		return -1;
-	}
-
-	glViewport(0, 0, 800, 600);
-
-
-	while (!glfwWindowShouldClose(window)) {
-		// Keep running
-	}
-
-
+  window_manager->closeDisplay();
 
 	return 0;
 }
