@@ -1,1 +1,1 @@
-Working empty OpenGL, GLFW, GLAD codeblocks project with cmake
+Working empty OpenGL, GLFW, GLAD project with cmake

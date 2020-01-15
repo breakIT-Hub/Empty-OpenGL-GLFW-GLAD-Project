@@ -3,4 +3,10 @@
     build/
     source/
         * HelloWorld.cpp
+        * .cpp
     include/
+        * HelloWorld.h
+        * .h
+    libs/
+        * glad
+        * glfw
